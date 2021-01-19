@@ -41,7 +41,7 @@ namespace Hangman
         //Daftar posisi indeks untuk melacak kata mana yang sudah dimainkan
         List<int> Indekskatasudahdimainkan = new List<int>();
 
-        int Katasalahount = 0;
+        int Hitungkatasalah = 0;
 
         public GameForm()
         {
@@ -49,12 +49,12 @@ namespace Hangman
             this.ltr += new CheckLetter(Form1_ltr);
 
             //Membuat kata baru
-            BuatListKata();
+            BuatDaftarKata();
 
             //Memulai game baru
             RestartTheGame();
         }
-        private void BuatListKata()
+        private void BuatDaftarKata()
         {
             //daftar kata yang di tebak ada 10
             Daftarkata.Add("Jakarta");
@@ -68,15 +68,15 @@ namespace Hangman
             Daftarkata.Add("Cuaca");
             Daftarkata.Add("Baju");
         }
-        private string GetNewWordFromPool()
+        private string DapatkanKataDariDaftar()
         {
-            bool IsNewWord = false;
+            bool Katabaru = false;
             //Default word
             string temp = "HANGMAN";
 
             try
             {
-                while (IsNewWord == false)
+                while (Katabaru == false)
                 {
                     //Untuk mendapatkan kata secara acak dari kumpulan kata
                     int index = rndm.Next();
@@ -87,12 +87,12 @@ namespace Hangman
                     {
                         temp = Daftarkata[index];
                         Indekskatasudahdimainkan.Add(index);
-                        IsNewWord = true;
+                        Katabaru = true;
                         break;
                     }
                     else
                     {
-                        IsNewWord = false;
+                        Katabaru = false;
                     }
                 }
             }
@@ -102,6 +102,38 @@ namespace Hangman
             }
             return temp.ToUpper();
         }
+        private void RestartTheGame()
+        {
+            try
+            {
+                KataDitemukan = DapatkanKataDariDaftar();
+                KataDitemukan = KataDitemukan.ToUpper();
+                Katauntukmenemukanarray = KataDitemukan.ToCharArray();
+
+                Katauntukmenemukanposisikalimat = new int[KataDitemukan.Length];
+
+                //Resetting other counters and variables
+                input = "";
+                KataDitampilkan = "";
+                for (int i = 0; i < KataDitemukan.Length; i++)
+                {
+                    KataDitampilkan += "-";
+                }
+
+                KataSalah = "";
+                Hitungkatasalah = 0;
+
+                label_Word.Text = KataDitampilkan.ToUpper();
+                label_KataSalah.Text = KataSalah;
+                label_MissedLtrCnt.Text = MaksKesempatan.ToString();
+                Application.DoEvents();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Menu form = new Menu();
