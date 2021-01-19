@@ -14,63 +14,99 @@ namespace Hangman
     public delegate void CheckLetter(string letter);
     public partial class GameForm : Form
     {
-        const int MAX_NUMBER_OF_CHANCE = 5;
+        const int MaksKesempatan = 5;
         //coding dimana jika setiap kali kata berhasil yang ditebak
-        event CheckLetter ChkLtr;
+        event CheckLetter ltr;
 
         string input;
         string KataSalah = "";
 
         //untuk menemukan kata
-        string WordToFind = "";
+        string KataDitemukan = "";
 
         //menunjukkan kata yang telah didapat
-        string WordToDisplay = "";
+        string KataDitampilkan = "";
 
         //Array karakter kata
-        char[] WordToFindArray;
-        int[] WordToFindLettersPosition;
-        bool IsLetterFound = false;
+        char[] Katauntukmenemukanarray;
+        int[] Katauntukmenemukanposisikalimat;
+        bool JikaKalimatDitemukan = false;
 
         //mengrandom kata dari word list
         Random rndm = new Random(0);
 
         //mengumpulkan kata
-        List<string> WordList = new List<string>();
+        List<string> Daftarkata = new List<string>();
 
         //Daftar posisi indeks untuk melacak kata mana yang sudah dimainkan
-        List<int> WordsIndexAlreadyPlayed = new List<int>();
+        List<int> Indekskatasudahdimainkan = new List<int>();
 
-        int KataSalahCount = 0;
+        int Katasalahount = 0;
 
         public GameForm()
         {
             InitializeComponent();
-            this.ChkLtr += new CheckLetter(Form1_ChkLtr);
+            this.ltr += new CheckLetter(Form1_ltr);
 
             //Membuat kata baru
-            CreateWordList();
+            BuatListKata();
 
             //Memulai game baru
             RestartTheGame();
         }
-        private void CreateWordList()
+        private void BuatListKata()
         {
             //daftar kata yang di tebak ada 10
-            WordList.Add("Jakarta");
-            WordList.Add("Tambang");
-            WordList.Add("Sekolah");
-            WordList.Add("Barack Obama");
-            WordList.Add("Paris");
-            WordList.Add("Zoo");
-            WordList.Add("Mahasiswa");
-            WordList.Add("Musik");
-            WordList.Add("Cuaca");
-            WordList.Add("Baju");
+            Daftarkata.Add("Jakarta");
+            Daftarkata.Add("Tambang");
+            Daftarkata.Add("Sekolah");
+            Daftarkata.Add("Barack Obama");
+            Daftarkata.Add("Paris");
+            Daftarkata.Add("Zoo");
+            Daftarkata.Add("Mahasiswa");
+            Daftarkata.Add("Musik");
+            Daftarkata.Add("Cuaca");
+            Daftarkata.Add("Baju");
         }
-        private void RestartTheGame()
+        private string GetNewWordFromPool()
         {
+            bool IsNewWord = false;
+            //Default word
+            string temp = "HANGMAN";
 
+            try
+            {
+                while (IsNewWord == false)
+                {
+                    //Untuk mendapatkan kata secara acak dari kumpulan kata
+                    int index = rndm.Next();
+
+                    index = index % Daftarkata.Count;
+
+                    if (!Indekskatasudahdimainkan.Exists(e => e == index))
+                    {
+                        temp = Daftarkata[index];
+                        Indekskatasudahdimainkan.Add(index);
+                        IsNewWord = true;
+                        break;
+                    }
+                    else
+                    {
+                        IsNewWord = false;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            return temp.ToUpper();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            this.Hide();
+            form.Show();
         }
     }
 }
