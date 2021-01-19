@@ -133,6 +133,64 @@ namespace Hangman
                 MessageBox.Show(exc.Message);
             }
         }
+        private void Form1_ltr(string currentInputletter)
+        {
+            try
+            {
+                if (Hitungkatasalah < MaksKesempatan)
+                {
+
+                    JikaKalimatDitemukan = false;
+                    for (int i = 0; i < Katauntukmenemukanarray.Length; i++)
+                    {
+                        if (currentInputletter[0] == Katauntukmenemukanarray[i])
+                        {
+                            Katauntukmenemukanposisikalimat[i] = 1;
+                            JikaKalimatDitemukan = true;
+                        }
+                    }
+
+                    if (JikaKalimatDitemukan == false)
+                    {
+                        KataSalah += currentInputletter + ", ";
+                        Hitungkatasalah++;
+                        label_MissedLtrCnt.Text = (MaksKesempatan - Hitungkatasalah).ToString();
+                    }
+
+                    KataDitampilkan = "";
+                    for (int i = 0; i < Katauntukmenemukanarray.Length; i++)
+                    {
+                        if (Katauntukmenemukanposisikalimat[i] == 1)
+                        {
+                            KataDitampilkan += Katauntukmenemukanarray[i].ToString();
+                        }
+                        else
+                        {
+                            KataDitampilkan += "-";
+                        }
+                    }
+
+                    label_Word.Text = KataDitampilkan.ToUpper();
+                    label_KataSalah.Text = KataSalah;
+
+                    if (Katauntukmenemukanposisikalimat.All(e => e == 1))
+                    {
+                        MessageBox.Show("Selamat Anda Menang.", "Hasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RestartTheGame();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Alah Anda Gagal" + "\nJawaban yang benar itu adalah: " + KataDitemukan, "Hasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RestartTheGame();
+                }
+                Application.DoEvents();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
