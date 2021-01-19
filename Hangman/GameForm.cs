@@ -191,6 +191,41 @@ namespace Hangman
                 MessageBox.Show(exc.Message);
             }
         }
+        //membuat alphabet
+        private void button_A_Click(object sender, EventArgs e)
+        {
+            input = "A";
+
+            ltr(input);
+        }
+
+        private void button_B_Click(object sender, EventArgs e)
+        {
+            input = "B";
+
+            ltr(input);
+        }
+
+        private void button_C_Click(object sender, EventArgs e)
+        {
+            input = "C";
+
+            ltr(input);
+        }
+
+        private void button_D_Click(object sender, EventArgs e)
+        {
+            input = "D";
+
+            ltr(input);
+        }
+
+        private void button_E_Click(object sender, EventArgs e)
+        {
+            input = "E";
+
+            ltr(input);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
