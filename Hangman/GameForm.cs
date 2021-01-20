@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 
@@ -123,7 +122,7 @@ namespace Hangman
                 KataSalah = "";
                 Hitungkatasalah = 0;
 
-                label_Word.Text = KataDitampilkan.ToUpper();
+                label_Kata.Text = KataDitampilkan.ToUpper();
                 label_KataSalah.Text = KataSalah;
                 label_MissedLtrCnt.Text = MaksKesempatan.ToString();
                 Application.DoEvents();
@@ -170,7 +169,7 @@ namespace Hangman
                         }
                     }
 
-                    label_Word.Text = KataDitampilkan.ToUpper();
+                    label_Kata.Text = KataDitampilkan.ToUpper();
                     label_KataSalah.Text = KataSalah;
 
                     if (Katauntukmenemukanposisikalimat.All(e => e == 1))
@@ -191,190 +190,319 @@ namespace Hangman
                 MessageBox.Show(exc.Message);
             }
         }
-        //membuat alphabet
         private void button_A_Click(object sender, EventArgs e)
         {
-            input = "A";
-
-            ltr(input);
+            
         }
 
         private void button_B_Click(object sender, EventArgs e)
         {
-            input = "B";
-
-            ltr(input);
+            
         }
 
         private void button_C_Click(object sender, EventArgs e)
         {
-            input = "C";
-
-            ltr(input);
+            
         }
 
         private void button_D_Click(object sender, EventArgs e)
         {
-            input = "D";
-
-            ltr(input);
+            
         }
 
         private void button_E_Click(object sender, EventArgs e)
         {
-            input = "E";
-
-            ltr(input);
+            
         }
         private void button_F_Click(object sender, EventArgs e)
         {
-            input = "F";
-
-            ltr(input);
+            
         }
 
         private void button_G_Click(object sender, EventArgs e)
         {
-            input = "G";
-
-            ltr(input);
+            
         }
 
         private void button_H_Click(object sender, EventArgs e)
         {
-            input = "H";
-
-            ltr(input);
+            
         }
 
         private void button_I_Click(object sender, EventArgs e)
         {
-            input = "I";
-
-            ltr(input);
+            
         }
 
         private void button_J_Click(object sender, EventArgs e)
         {
-            input = "J";
-
-            ltr(input);
+            
         }
 
         private void button_K_Click(object sender, EventArgs e)
         {
-            input = "K";
-
-            ltr(input);
+            
         }
 
         private void button_L_Click(object sender, EventArgs e)
         {
-            input = "L";
-
-            ltr(input);
+            
         }
 
         private void button_M_Click(object sender, EventArgs e)
         {
-            input = "M";
-
-            ltr(input);
+            
         }
         private void button_N_Click(object sender, EventArgs e)
         {
-            input = "N";
-
-            ltr(input);
+            
         }
 
         private void button_O_Click(object sender, EventArgs e)
         {
-            input = "O";
-
-            ltr(input);
+            
         }
         private void button_P_Click(object sender, EventArgs e)
         {
-            input = "P";
-
-            ltr(input);
+            
         }
 
         private void button_Q_Click(object sender, EventArgs e)
         {
-            input = "Q";
-
-            ltr(input);
+            
         }
 
         private void button_R_Click(object sender, EventArgs e)
         {
-            input = "R";
-
-            ltr(input);
+            
         }
 
         private void button_S_Click(object sender, EventArgs e)
         {
-            input = "S";
-
-            ltr(input);
+            
         }
 
         private void button_T_Click(object sender, EventArgs e)
         {
-            input = "T";
-
-            ltr(input);
+            
         }
 
         private void button_U_Click(object sender, EventArgs e)
         {
-            input = "U";
-
-            ltr(input);
+            
         }
 
         private void button_V_Click(object sender, EventArgs e)
         {
-            input = "V";
-
-            ltr(input);
+            
         }
 
         private void button_W_Click(object sender, EventArgs e)
         {
-            input = "W";
-
-            ltr(input);
+            
         }
 
         private void button_X_Click(object sender, EventArgs e)
         {
-            input = "X";
-
-            ltr(input);
+            
         }
 
         private void button_Y_Click(object sender, EventArgs e)
         {
-            input = "Y";
-
-            ltr(input);
+            
         }
 
         private void button_Z_Click(object sender, EventArgs e)
         {
-            input = "Z";
-
-            ltr(input);
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
             Menu form = new Menu();
             this.Hide();
             form.Show();
+        }
+
+        private void button_Q_Click_1(object sender, EventArgs e)
+        {
+            input = "Q";
+
+            ltr(input);
+        }
+
+        private void button_W_Click_1(object sender, EventArgs e)
+        {
+            input = "W";
+
+            ltr(input);
+        }
+
+        private void button_E_Click_1(object sender, EventArgs e)
+        {
+            input = "E";
+
+            ltr(input);
+        }
+
+        private void button_R_Click_1(object sender, EventArgs e)
+        {
+            input = "R";
+
+            ltr(input);
+        }
+
+        private void button_T_Click_1(object sender, EventArgs e)
+        {
+            input = "T";
+
+            ltr(input);
+        }
+
+        private void button_Y_Click_1(object sender, EventArgs e)
+        {
+            input = "Y";
+
+            ltr(input);
+        }
+
+        private void button_U_Click_1(object sender, EventArgs e)
+        {
+            input = "U";
+
+            ltr(input);
+        }
+
+        private void button_I_Click_1(object sender, EventArgs e)
+        {
+            input = "I";
+
+            ltr(input);
+        }
+
+        private void button_O_Click_1(object sender, EventArgs e)
+        {
+            input = "O";
+
+            ltr(input);
+        }
+
+        private void button_P_Click_1(object sender, EventArgs e)
+        {
+            input = "P";
+
+            ltr(input);
+        }
+
+        private void button_A_Click_1(object sender, EventArgs e)
+        {
+            input = "A";
+
+            ltr(input);
+        }
+
+        private void button_S_Click_1(object sender, EventArgs e)
+        {
+            input = "S";
+
+            ltr(input);
+        }
+
+        private void button_D_Click_1(object sender, EventArgs e)
+        {
+            input = "D";
+
+            ltr(input);
+        }
+
+        private void button_F_Click_1(object sender, EventArgs e)
+        {
+            input = "F";
+
+            ltr(input);
+        }
+
+        private void button_G_Click_1(object sender, EventArgs e)
+        {
+            input = "G";
+
+            ltr(input);
+        }
+
+        private void button_H_Click_1(object sender, EventArgs e)
+        {
+            input = "H";
+
+            ltr(input);
+        }
+
+        private void button_J_Click_1(object sender, EventArgs e)
+        {
+            input = "J";
+
+            ltr(input);
+        }
+
+        private void button_K_Click_1(object sender, EventArgs e)
+        {
+            input = "K";
+
+            ltr(input);
+        }
+
+        private void button_L_Click_1(object sender, EventArgs e)
+        {
+            input = "L";
+
+            ltr(input);
+        }
+
+        private void button_Z_Click_1(object sender, EventArgs e)
+        {
+            input = "Z";
+
+            ltr(input);
+        }
+
+        private void button_X_Click_1(object sender, EventArgs e)
+        {
+            input = "X";
+
+            ltr(input);
+        }
+
+        private void button_C_Click_1(object sender, EventArgs e)
+        {
+            input = "C";
+
+            ltr(input);
+        }
+
+        private void button_V_Click_1(object sender, EventArgs e)
+        {
+            input = "V";
+
+            ltr(input);
+        }
+
+        private void button_B_Click_1(object sender, EventArgs e)
+        {
+            input = "B";
+
+            ltr(input);
+        }
+
+        private void button_N_Click_1(object sender, EventArgs e)
+        {
+            input = "N";
+
+            ltr(input);
+        }
+
+        private void button_M_Click_1(object sender, EventArgs e)
+        {
+            input = "M";
+
+            ltr(input);
         }
     }
 }
