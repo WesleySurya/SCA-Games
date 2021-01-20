@@ -79,7 +79,7 @@ namespace Hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(197, 305);
+            this.ClientSize = new System.Drawing.Size(201, 305);
             this.Controls.Add(this.Help);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.About);
