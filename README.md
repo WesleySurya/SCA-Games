@@ -1,1 +1,6 @@
 # SCA-Games
+Project TKKPL 2020/2021. Tema: Games. Judul: Hangman. Anggota:
+
+1. Andi Sulides - 171110550
+2. Gary Phanderson - 171110436
+3. Wesley Surya - 171111156
