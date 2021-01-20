@@ -117,12 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Hangman adalah permainan menebak kertas dan pensil untuk dua atau lebih pemain. 
-Satu pemain memikirkan kata, frasa atau kalimat dan yang lain mencoba menerka dengan menyarankan huruf-huruf dalam sejumlah tebakan tertentu.</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Contoh permainan berikut mengilustrasikan seorang pemain yang mencoba menebak kata algojo menggunakan strategi yang hanya berdasarkan frekuensi huruf.
-Saat pemain melanjutkan, bagian dari tongkat pada jerat ditambahkan. Setelah seluruh tubuh ditarik, permainan berakhir, dan pemain kalah.</value>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Hangman adalah permainan menebak kertas dan pensil untuk dua atau lebih pemain. Satu pemain memikirkan kata, frasa atau kalimat dan yang lain mencoba menerka dengan menyarankan huruf-huruf dalam sejumlah tebakan tertentu.
+
+Contoh permainan berikut mengilustrasikan seorang pemain yang mencoba menebak kata algojo menggunakan strategi yang hanya berdasarkan frekuensi huruf. Saat pemain melanjutkan, bagian dari tongkat pada jerat ditambahkan. Setelah seluruh tubuh ditarik, permainan berakhir, dan pemain kalah.
+
+Tapi di sini kami menggunakan giliran tersisa</value>
   </data>
 </root>
