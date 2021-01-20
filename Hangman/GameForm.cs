@@ -504,5 +504,10 @@ namespace Hangman
 
             ltr(input);
         }
+
+        private void label_KataSalah_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
