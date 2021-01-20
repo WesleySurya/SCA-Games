@@ -26,7 +26,9 @@ namespace Hangman
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Menu form = new Menu();
+            this.Hide();
+            form.Show();
         }
     }
 }
