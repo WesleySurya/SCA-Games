@@ -226,7 +226,74 @@ namespace Hangman
 
             ltr(input);
         }
+        private void button_F_Click(object sender, EventArgs e)
+        {
+            input = "F";
 
+            ltr(input);
+        }
+
+        private void button_G_Click(object sender, EventArgs e)
+        {
+            input = "G";
+
+            ltr(input);
+        }
+
+        private void button_H_Click(object sender, EventArgs e)
+        {
+            input = "H";
+
+            ltr(input);
+        }
+
+        private void button_I_Click(object sender, EventArgs e)
+        {
+            input = "I";
+
+            ltr(input);
+        }
+
+        private void button_J_Click(object sender, EventArgs e)
+        {
+            input = "J";
+
+            ltr(input);
+        }
+
+        private void button_K_Click(object sender, EventArgs e)
+        {
+            input = "K";
+
+            ltr(input);
+        }
+
+        private void button_L_Click(object sender, EventArgs e)
+        {
+            input = "L";
+
+            ltr(input);
+        }
+
+        private void button_M_Click(object sender, EventArgs e)
+        {
+            input = "M";
+
+            ltr(input);
+        }
+        private void button_N_Click(object sender, EventArgs e)
+        {
+            input = "N";
+
+            ltr(input);
+        }
+
+        private void button_O_Click(object sender, EventArgs e)
+        {
+            input = "O";
+
+            ltr(input);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Menu form = new Menu();
