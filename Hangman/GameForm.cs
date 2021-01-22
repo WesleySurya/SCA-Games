@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
 
 namespace Hangman
 {
@@ -111,7 +111,7 @@ namespace Hangman
 
                 Katauntukmenemukanposisikalimat = new int[KataDitemukan.Length];
 
-                //Resetting other counters and variables
+                //Mengatur ulang penghitung dan variabel lain
                 input = "";
                 KataDitampilkan = "";
                 for (int i = 0; i < KataDitemukan.Length; i++)
@@ -124,7 +124,7 @@ namespace Hangman
 
                 label_Kata.Text = KataDitampilkan.ToUpper();
                 label_KataSalah.Text = KataSalah;
-                label_MissedLtrCnt.Text = MaksKesempatan.ToString();
+                label_GiliranTersisa.Text = MaksKesempatan.ToString();
                 Application.DoEvents();
             }
             catch (Exception exc)
@@ -153,7 +153,7 @@ namespace Hangman
                     {
                         KataSalah += currentInputletter + ", ";
                         Hitungkatasalah++;
-                        label_MissedLtrCnt.Text = (MaksKesempatan - Hitungkatasalah).ToString();
+                        label_GiliranTersisa.Text = (MaksKesempatan - Hitungkatasalah).ToString();
                     }
 
                     KataDitampilkan = "";
@@ -508,6 +508,11 @@ namespace Hangman
         private void label_KataSalah_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_LoadNewWord_Click(object sender, EventArgs e)
+        {
+            RestartTheGame();
         }
     }
 }

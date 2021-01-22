@@ -29,15 +29,12 @@ namespace Hangman
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_MissedLtrCnt = new System.Windows.Forms.Label();
+            this.label_GiliranTersisa = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label_KataSalah = new System.Windows.Forms.Label();
             this.button_LoadNewWord = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label_Kata = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button_M = new System.Windows.Forms.Button();
             this.button_E = new System.Windows.Forms.Button();
             this.button_A = new System.Windows.Forms.Button();
@@ -64,35 +61,21 @@ namespace Hangman
             this.button_Y = new System.Windows.Forms.Button();
             this.button_H = new System.Windows.Forms.Button();
             this.button_Z = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // label_GiliranTersisa
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.label_MissedLtrCnt);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox1.Location = new System.Drawing.Point(421, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 139);
-            this.groupBox1.TabIndex = 32;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Giliran Tersisa";
-            // 
-            // label_MissedLtrCnt
-            // 
-            this.label_MissedLtrCnt.AutoSize = true;
-            this.label_MissedLtrCnt.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label_MissedLtrCnt.Font = new System.Drawing.Font("Calibri", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MissedLtrCnt.ForeColor = System.Drawing.Color.Black;
-            this.label_MissedLtrCnt.Location = new System.Drawing.Point(44, 34);
-            this.label_MissedLtrCnt.Name = "label_MissedLtrCnt";
-            this.label_MissedLtrCnt.Size = new System.Drawing.Size(69, 82);
-            this.label_MissedLtrCnt.TabIndex = 0;
-            this.label_MissedLtrCnt.Text = "5";
+            this.label_GiliranTersisa.AutoSize = true;
+            this.label_GiliranTersisa.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_GiliranTersisa.Font = new System.Drawing.Font("Calibri", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_GiliranTersisa.ForeColor = System.Drawing.Color.Black;
+            this.label_GiliranTersisa.Location = new System.Drawing.Point(398, 136);
+            this.label_GiliranTersisa.Name = "label_GiliranTersisa";
+            this.label_GiliranTersisa.Size = new System.Drawing.Size(69, 82);
+            this.label_GiliranTersisa.TabIndex = 0;
+            this.label_GiliranTersisa.Text = "5";
             // 
             // label1
             // 
@@ -120,17 +103,18 @@ namespace Hangman
             // button_LoadNewWord
             // 
             this.button_LoadNewWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LoadNewWord.Location = new System.Drawing.Point(20, 343);
+            this.button_LoadNewWord.Location = new System.Drawing.Point(54, 339);
             this.button_LoadNewWord.Name = "button_LoadNewWord";
             this.button_LoadNewWord.Size = new System.Drawing.Size(146, 43);
             this.button_LoadNewWord.TabIndex = 60;
-            this.button_LoadNewWord.Text = "Start a new game";
+            this.button_LoadNewWord.Text = "New Game";
             this.button_LoadNewWord.UseVisualStyleBackColor = true;
+            this.button_LoadNewWord.Click += new System.EventHandler(this.button_LoadNewWord_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(412, 343);
+            this.button1.Location = new System.Drawing.Point(268, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 43);
             this.button1.TabIndex = 61;
@@ -144,35 +128,16 @@ namespace Hangman
             this.label_Kata.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label_Kata.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label_Kata.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Kata.Location = new System.Drawing.Point(102, 33);
+            this.label_Kata.Location = new System.Drawing.Point(108, 46);
             this.label_Kata.Name = "label_Kata";
             this.label_Kata.Size = new System.Drawing.Size(151, 31);
             this.label_Kata.TabIndex = 0;
             this.label_Kata.Text = "________";
             this.label_Kata.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Hangman";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label_Kata);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 100);
-            this.panel1.TabIndex = 27;
-            // 
             // button_M
             // 
-            this.button_M.Location = new System.Drawing.Point(322, 97);
+            this.button_M.Location = new System.Drawing.Point(312, 279);
             this.button_M.Name = "button_M";
             this.button_M.Size = new System.Drawing.Size(38, 23);
             this.button_M.TabIndex = 75;
@@ -182,7 +147,7 @@ namespace Hangman
             // 
             // button_E
             // 
-            this.button_E.Location = new System.Drawing.Point(125, 39);
+            this.button_E.Location = new System.Drawing.Point(115, 221);
             this.button_E.Name = "button_E";
             this.button_E.Size = new System.Drawing.Size(38, 23);
             this.button_E.TabIndex = 67;
@@ -192,7 +157,7 @@ namespace Hangman
             // 
             // button_A
             // 
-            this.button_A.Location = new System.Drawing.Point(40, 68);
+            this.button_A.Location = new System.Drawing.Point(30, 250);
             this.button_A.Name = "button_A";
             this.button_A.Size = new System.Drawing.Size(38, 23);
             this.button_A.TabIndex = 60;
@@ -202,7 +167,7 @@ namespace Hangman
             // 
             // button_N
             // 
-            this.button_N.Location = new System.Drawing.Point(278, 97);
+            this.button_N.Location = new System.Drawing.Point(268, 279);
             this.button_N.Name = "button_N";
             this.button_N.Size = new System.Drawing.Size(38, 23);
             this.button_N.TabIndex = 74;
@@ -212,7 +177,7 @@ namespace Hangman
             // 
             // button_B
             // 
-            this.button_B.Location = new System.Drawing.Point(234, 97);
+            this.button_B.Location = new System.Drawing.Point(224, 279);
             this.button_B.Name = "button_B";
             this.button_B.Size = new System.Drawing.Size(38, 23);
             this.button_B.TabIndex = 61;
@@ -222,7 +187,7 @@ namespace Hangman
             // 
             // button_F
             // 
-            this.button_F.Location = new System.Drawing.Point(172, 68);
+            this.button_F.Location = new System.Drawing.Point(162, 250);
             this.button_F.Name = "button_F";
             this.button_F.Size = new System.Drawing.Size(38, 23);
             this.button_F.TabIndex = 66;
@@ -232,7 +197,7 @@ namespace Hangman
             // 
             // button_O
             // 
-            this.button_O.Location = new System.Drawing.Point(387, 39);
+            this.button_O.Location = new System.Drawing.Point(377, 221);
             this.button_O.Name = "button_O";
             this.button_O.Size = new System.Drawing.Size(38, 23);
             this.button_O.TabIndex = 73;
@@ -242,7 +207,7 @@ namespace Hangman
             // 
             // button_K
             // 
-            this.button_K.Location = new System.Drawing.Point(348, 68);
+            this.button_K.Location = new System.Drawing.Point(338, 250);
             this.button_K.Name = "button_K";
             this.button_K.Size = new System.Drawing.Size(38, 23);
             this.button_K.TabIndex = 71;
@@ -252,7 +217,7 @@ namespace Hangman
             // 
             // button_Q
             // 
-            this.button_Q.Location = new System.Drawing.Point(30, 39);
+            this.button_Q.Location = new System.Drawing.Point(20, 221);
             this.button_Q.Name = "button_Q";
             this.button_Q.Size = new System.Drawing.Size(38, 23);
             this.button_Q.TabIndex = 76;
@@ -262,7 +227,7 @@ namespace Hangman
             // 
             // button_R
             // 
-            this.button_R.Location = new System.Drawing.Point(169, 39);
+            this.button_R.Location = new System.Drawing.Point(159, 221);
             this.button_R.Name = "button_R";
             this.button_R.Size = new System.Drawing.Size(38, 23);
             this.button_R.TabIndex = 77;
@@ -272,7 +237,7 @@ namespace Hangman
             // 
             // button_P
             // 
-            this.button_P.Location = new System.Drawing.Point(431, 39);
+            this.button_P.Location = new System.Drawing.Point(421, 221);
             this.button_P.Name = "button_P";
             this.button_P.Size = new System.Drawing.Size(38, 23);
             this.button_P.TabIndex = 72;
@@ -282,7 +247,7 @@ namespace Hangman
             // 
             // button_C
             // 
-            this.button_C.Location = new System.Drawing.Point(146, 97);
+            this.button_C.Location = new System.Drawing.Point(136, 279);
             this.button_C.Name = "button_C";
             this.button_C.Size = new System.Drawing.Size(38, 23);
             this.button_C.TabIndex = 63;
@@ -292,7 +257,7 @@ namespace Hangman
             // 
             // button_S
             // 
-            this.button_S.Location = new System.Drawing.Point(84, 68);
+            this.button_S.Location = new System.Drawing.Point(74, 250);
             this.button_S.Name = "button_S";
             this.button_S.Size = new System.Drawing.Size(38, 23);
             this.button_S.TabIndex = 79;
@@ -302,7 +267,7 @@ namespace Hangman
             // 
             // button_T
             // 
-            this.button_T.Location = new System.Drawing.Point(213, 39);
+            this.button_T.Location = new System.Drawing.Point(203, 221);
             this.button_T.Name = "button_T";
             this.button_T.Size = new System.Drawing.Size(38, 23);
             this.button_T.TabIndex = 78;
@@ -312,7 +277,7 @@ namespace Hangman
             // 
             // button_L
             // 
-            this.button_L.Location = new System.Drawing.Point(392, 68);
+            this.button_L.Location = new System.Drawing.Point(382, 250);
             this.button_L.Name = "button_L";
             this.button_L.Size = new System.Drawing.Size(38, 23);
             this.button_L.TabIndex = 70;
@@ -322,7 +287,7 @@ namespace Hangman
             // 
             // button_J
             // 
-            this.button_J.Location = new System.Drawing.Point(304, 68);
+            this.button_J.Location = new System.Drawing.Point(294, 250);
             this.button_J.Name = "button_J";
             this.button_J.Size = new System.Drawing.Size(38, 23);
             this.button_J.TabIndex = 69;
@@ -332,7 +297,7 @@ namespace Hangman
             // 
             // button_I
             // 
-            this.button_I.Location = new System.Drawing.Point(343, 39);
+            this.button_I.Location = new System.Drawing.Point(333, 221);
             this.button_I.Name = "button_I";
             this.button_I.Size = new System.Drawing.Size(38, 23);
             this.button_I.TabIndex = 68;
@@ -342,7 +307,7 @@ namespace Hangman
             // 
             // button_G
             // 
-            this.button_G.Location = new System.Drawing.Point(216, 68);
+            this.button_G.Location = new System.Drawing.Point(206, 250);
             this.button_G.Name = "button_G";
             this.button_G.Size = new System.Drawing.Size(38, 23);
             this.button_G.TabIndex = 65;
@@ -352,7 +317,7 @@ namespace Hangman
             // 
             // button_U
             // 
-            this.button_U.Location = new System.Drawing.Point(299, 39);
+            this.button_U.Location = new System.Drawing.Point(289, 221);
             this.button_U.Name = "button_U";
             this.button_U.Size = new System.Drawing.Size(38, 23);
             this.button_U.TabIndex = 83;
@@ -362,7 +327,7 @@ namespace Hangman
             // 
             // button_V
             // 
-            this.button_V.Location = new System.Drawing.Point(190, 97);
+            this.button_V.Location = new System.Drawing.Point(180, 279);
             this.button_V.Name = "button_V";
             this.button_V.Size = new System.Drawing.Size(38, 23);
             this.button_V.TabIndex = 82;
@@ -372,7 +337,7 @@ namespace Hangman
             // 
             // button_W
             // 
-            this.button_W.Location = new System.Drawing.Point(79, 39);
+            this.button_W.Location = new System.Drawing.Point(69, 221);
             this.button_W.Name = "button_W";
             this.button_W.Size = new System.Drawing.Size(38, 23);
             this.button_W.TabIndex = 81;
@@ -382,7 +347,7 @@ namespace Hangman
             // 
             // button_X
             // 
-            this.button_X.Location = new System.Drawing.Point(102, 97);
+            this.button_X.Location = new System.Drawing.Point(92, 279);
             this.button_X.Name = "button_X";
             this.button_X.Size = new System.Drawing.Size(38, 23);
             this.button_X.TabIndex = 80;
@@ -392,7 +357,7 @@ namespace Hangman
             // 
             // button_D
             // 
-            this.button_D.Location = new System.Drawing.Point(128, 68);
+            this.button_D.Location = new System.Drawing.Point(118, 250);
             this.button_D.Name = "button_D";
             this.button_D.Size = new System.Drawing.Size(38, 23);
             this.button_D.TabIndex = 62;
@@ -402,7 +367,7 @@ namespace Hangman
             // 
             // button_Y
             // 
-            this.button_Y.Location = new System.Drawing.Point(255, 39);
+            this.button_Y.Location = new System.Drawing.Point(245, 221);
             this.button_Y.Name = "button_Y";
             this.button_Y.Size = new System.Drawing.Size(38, 23);
             this.button_Y.TabIndex = 84;
@@ -412,7 +377,7 @@ namespace Hangman
             // 
             // button_H
             // 
-            this.button_H.Location = new System.Drawing.Point(260, 68);
+            this.button_H.Location = new System.Drawing.Point(250, 250);
             this.button_H.Name = "button_H";
             this.button_H.Size = new System.Drawing.Size(38, 23);
             this.button_H.TabIndex = 64;
@@ -422,7 +387,7 @@ namespace Hangman
             // 
             // button_Z
             // 
-            this.button_Z.Location = new System.Drawing.Point(58, 97);
+            this.button_Z.Location = new System.Drawing.Point(48, 279);
             this.button_Z.Name = "button_Z";
             this.button_Z.Size = new System.Drawing.Size(38, 23);
             this.button_Z.TabIndex = 85;
@@ -430,75 +395,81 @@ namespace Hangman
             this.button_Z.UseVisualStyleBackColor = true;
             this.button_Z.Click += new System.EventHandler(this.button_Z_Click_1);
             // 
-            // groupBox2
+            // label3
             // 
-            this.groupBox2.Controls.Add(this.button_Z);
-            this.groupBox2.Controls.Add(this.button_H);
-            this.groupBox2.Controls.Add(this.button_Y);
-            this.groupBox2.Controls.Add(this.button_D);
-            this.groupBox2.Controls.Add(this.button_X);
-            this.groupBox2.Controls.Add(this.button_W);
-            this.groupBox2.Controls.Add(this.button_V);
-            this.groupBox2.Controls.Add(this.button_U);
-            this.groupBox2.Controls.Add(this.button_G);
-            this.groupBox2.Controls.Add(this.button_I);
-            this.groupBox2.Controls.Add(this.button_J);
-            this.groupBox2.Controls.Add(this.button_L);
-            this.groupBox2.Controls.Add(this.button_T);
-            this.groupBox2.Controls.Add(this.button_S);
-            this.groupBox2.Controls.Add(this.button_C);
-            this.groupBox2.Controls.Add(this.button_P);
-            this.groupBox2.Controls.Add(this.button_R);
-            this.groupBox2.Controls.Add(this.button_Q);
-            this.groupBox2.Controls.Add(this.button_K);
-            this.groupBox2.Controls.Add(this.button_O);
-            this.groupBox2.Controls.Add(this.button_F);
-            this.groupBox2.Controls.Add(this.button_B);
-            this.groupBox2.Controls.Add(this.button_N);
-            this.groupBox2.Controls.Add(this.button_A);
-            this.groupBox2.Controls.Add(this.button_E);
-            this.groupBox2.Controls.Add(this.button_M);
-            this.groupBox2.Location = new System.Drawing.Point(20, 208);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(490, 129);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Keypad";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(394, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Giliran Tersisa";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(65, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 86;
+            this.label2.Text = "Kata:";
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 394);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(489, 394);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button_Z);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_H);
+            this.Controls.Add(this.label_Kata);
+            this.Controls.Add(this.button_Y);
+            this.Controls.Add(this.label_GiliranTersisa);
+            this.Controls.Add(this.button_D);
+            this.Controls.Add(this.button_X);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_W);
             this.Controls.Add(this.button_LoadNewWord);
+            this.Controls.Add(this.button_V);
             this.Controls.Add(this.label_KataSalah);
+            this.Controls.Add(this.button_U);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button_G);
+            this.Controls.Add(this.button_Q);
+            this.Controls.Add(this.button_I);
+            this.Controls.Add(this.button_M);
+            this.Controls.Add(this.button_J);
+            this.Controls.Add(this.button_E);
+            this.Controls.Add(this.button_L);
+            this.Controls.Add(this.button_A);
+            this.Controls.Add(this.button_T);
+            this.Controls.Add(this.button_N);
+            this.Controls.Add(this.button_S);
+            this.Controls.Add(this.button_B);
+            this.Controls.Add(this.button_C);
+            this.Controls.Add(this.button_F);
+            this.Controls.Add(this.button_P);
+            this.Controls.Add(this.button_O);
+            this.Controls.Add(this.button_R);
+            this.Controls.Add(this.button_K);
             this.Name = "GameForm";
             this.Text = "GameForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label_MissedLtrCnt;
+        private System.Windows.Forms.Label label_GiliranTersisa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_KataSalah;
         private System.Windows.Forms.Button button_LoadNewWord;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_Kata;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_M;
         private System.Windows.Forms.Button button_E;
         private System.Windows.Forms.Button button_A;
@@ -525,6 +496,7 @@ namespace Hangman
         private System.Windows.Forms.Button button_Y;
         private System.Windows.Forms.Button button_H;
         private System.Windows.Forms.Button button_Z;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
